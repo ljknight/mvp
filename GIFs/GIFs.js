@@ -13,7 +13,6 @@ var GIFs = Backbone.Collection.extend ({
     $.get(
       'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+randomSearchTerm+'',
       function(data) {
-        console.log('data',data)
         // add new random gif to collection 
         this.add({
             imageURL: data.data.image_url,
@@ -21,7 +20,7 @@ var GIFs = Backbone.Collection.extend ({
             sourceURL: data.data.url
           });
 
-      }.bind(this) // do i need this?
+      }.bind(this)
     );
   }
 });

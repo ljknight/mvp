@@ -5,16 +5,15 @@
 </head>
 <body>
   <h1>Distraction Machine</h1>
+  <button class="random-button">Randomize</button>
   <div id="container">
-    <ul id="history"></ul>
-    <div id="current"></div>
+    <!-- <ul id="history"></ul> -->
+    <!-- <div id="current"></div> -->
   </div>
 
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/jquery/jquery.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
-
-  <script src="App/GIFdata.js"></script>
 
   <script src="History/HistoryEntry.js"></script>
   <script src="History/HistoryCollection.js"></script>
@@ -25,12 +24,13 @@
   <script src="History/HistoryView.js"></script>
   <script src="History/HistoryEntryView.js"></script>
   <script src="GIFs/CurrentGIFView.js"></script>
+  <script src="App/ButtonView.js"></script>
   <script src="App/AppView.js"></script>
 
   <script>
   // create gifs collection, which creates 
   var gifs = new GIFs();
-  var app = new AppView({
+  var appView = new AppView({
     collection: gifs
   });
   </script>
