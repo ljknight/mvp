@@ -1,7 +1,7 @@
 var HistoryEntryView = Backbone.View.extend ({
   tagName: '<li>',
 
-  template: _.template(),
+  //template: _.template(),
 
   initialize: function() {
     

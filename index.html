@@ -4,23 +4,35 @@
   <title>Distraction Machine</title>
 </head>
 <body>
-  <ul id="history"></ul>
-  <div id="current"></div>
+  <h1>Distraction Machine</h1>
+  <div id="container">
+    <ul id="history"></ul>
+    <div id="current"></div>
+  </div>
 
-  <script src-"bower_components/jquery/jquery.js"></script>
-  <script src-"bower_components/underscore/underscore.js"></script>
-  <script src-"bower_components/backbone/backbone.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
 
   <script src="App/GIFdata.js"></script>
 
   <script src="History/HistoryEntry.js"></script>
   <script src="History/HistoryCollection.js"></script>
-  <script src="CurrentGIF/CurrentGIF.js"></script>
+  <script src="GIFs/CurrentGIF.js"></script>
+  <script src="GIFs/GIFs.js"></script>
   <script src="App/AppModel.js"></script>
 
   <script src="History/HistoryView.js"></script>
   <script src="History/HistoryEntryView.js"></script>
-  <script src="CurrentGIF/CurrentGIFView.js"></script>
+  <script src="GIFs/CurrentGIFView.js"></script>
   <script src="App/AppView.js"></script>
+
+  <script>
+  // create gifs collection, which creates 
+  var gifs = new GIFs();
+  var app = new AppView({
+    collection: gifs
+  });
+  </script>
 </body>
 </html>

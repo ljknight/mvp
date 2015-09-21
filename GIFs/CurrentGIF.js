@@ -4,9 +4,4 @@ var CurrentGIF = Backbone.Model.extend ({
     searchTerm: '',
     sourceURL: ''
   },
-
-  initialize: function () {
-
-  }
-
 });
