@@ -17,7 +17,7 @@ var GIFs = Backbone.Collection.extend ({
         // add new random gif to collection 
         this.add({
             imageURL: data.data.image_url,
-            searchTerm: data.data.randomSearchTerm,
+            searchTerm: randomSearchTerm,
             sourceURL: data.data.url
           });
 
