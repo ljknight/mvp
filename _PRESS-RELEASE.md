@@ -36,12 +36,12 @@ Distraction Machine creates distraction for you, in the form of randomly generat
 
 ## How to Get Started ##
  - Load the app for your first randomly generated gif
- - See the last 10 viewed gifs in your history
- - Choose to either view a gif from your history, see a new gif similar to the current one, or show a randomly generated gif
+ - Keep track of the last 10 viewed gifs in your history
+ - Choose to either view a gif from your history, see a new gif similar to the current one, or show a completely random gif
  - Avoid work as long as needed
 
 ## Customer Quote ##
-"After I had completed all of Buzzfeed's quizzes and watched every Jimmy Fallon lip sync battle clip, I was ready for a new way to distract myself at work. Distraction Machine literally saved my life." - A real customer who chose to remain anonymous
+"After I had completed all of Buzzfeed's quizzes and watched every Jimmy Fallon lip sync battle clip, I was ready for a new way to distract myself at work. Distraction Machine literally saved my life." - A real customer 
 
 <!-- ## Closing and Call to Action ## -->
 <!--  > Wrap it up and give pointers where the reader should go next. -->
