@@ -1,4 +1,4 @@
-# Project Name #
+# Distraction Machine #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -15,30 +15,33 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
- 
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
-
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+Distraction Machine is a web application that gives users a simple way to take a break from whatever they're doing and look at random gifs instead. 
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+Looking for a distraction?
+You have Buzzfeed for lists.
+You have Facebook for creeping.
+You have Reddit for redditing.
+
+And now you have Distraction Machine for randomly generated, high-quality gifs.
 
 ## Problem ##
-  > Describe the problem your product solves.
+Sometimes you just need a distraction from your work or studies.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+Distraction Machine creates distraction for you, in the form of randomly generated gifs. The length of your distraction session is up to, and this app caters well to both your short- and long-lived distraction needs.
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+<!-- ## Quote from You ##
+  > A quote from a spokesperson in your company. -->
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+ - Load the app for your first randomly generated gif
+ - See the last 10 viewed gifs in your history
+ - Choose to either view a gif from your history, see a new gif similar to the current one, or show a randomly generated gif
+ - Avoid work as long as needed
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+"After I had completed all of Buzzfeed's quizzes and watched every Jimmy Fallon lip sync battle clip, I was ready for a new way to distract myself at work. Distraction Machine literally saved my life." - A real customer who chose to remain anonymous
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+<!-- ## Closing and Call to Action ## -->
+<!--  > Wrap it up and give pointers where the reader should go next. -->
