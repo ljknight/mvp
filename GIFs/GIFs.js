@@ -7,7 +7,7 @@ var GIFs = Backbone.Collection.extend ({
   },
 
   createRandomGIF: function () { 
-    var searchTerms = ['cat', 'dog', 'puppy', 'corgi', 'pug', 'harry+potter'];
+    var searchTerms = ['cat', 'kitten', 'dog', 'puppy', 'corgi', 'pug', 'goat', 'cute+animal', 'pusheen', 'zoolander', 'seinfeld', 'bill+murray','tina+fey', 'amy+schumer', 'arrested+development', 'pizza', 'donut'];
     var randomSearchTerm = searchTerms[Math.floor(Math.random() * searchTerms.length)];
 
     $.get(
