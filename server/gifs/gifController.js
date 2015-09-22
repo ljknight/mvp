@@ -1,0 +1,88 @@
+var Link = require('./gifModel.js');
+var Q = require('q');
+
+// search db to see if gif exists (search by url)
+// if not, add it
+// add like
+// add dislike
+// keep track of visits
+// save in db
+
+module.exports = {
+  findGIF: function(req, res, next, url) {
+    //
+  },
+
+  findUrl: function (req, res, next, code) {
+    var findLink = Q.nbind(Link.findOne, Link);
+    findLink({code: code})
+      .then(function (link) {
+        if (link) {
+          req.navLink = link;
+          next();
+        } else {
+          next(new Error('Link not added yet'));
+        }
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  },
+
+  newGIF: function(req, res, next) {
+    console.log('req', req)
+  },
+
+  newLink: function (req, res, next) {
+    console.log('req', req);
+    var url = req.body.url;
+    console.log(req.body);
+    if (!util.isValidUrl(url)) {
+      return next(new Error('Not a valid url'));
+    }
+
+    var createLink = Q.nbind(Link.create, Link);
+    var findLink = Q.nbind(Link.findOne, Link);
+
+    findLink({url: url})
+      .then(function (match) {
+        if (match) {
+          res.send(match);
+        } else {
+          return util.getUrlTitle(url);
+        }
+      })
+      .then(function (title) {
+        if (title) {
+          var newLink = {
+            url: url,
+            visits: 0,
+            base_url: req.headers.origin,
+            title: title
+          };
+          return createLink(newLink);
+        }
+      })
+      .then(function (createdLink) {
+        if (createdLink) {
+          res.json(createdLink);
+        }
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  },
+
+  navToLink: function (req, res, next) {
+    var link = req.navLink;
+    link.visits++;
+    link.save(function (err, savedLink) {
+      if (err) {
+        next(err);
+      } else {
+        res.redirect(savedLink.url);
+      }
+    });
+  }
+
+};

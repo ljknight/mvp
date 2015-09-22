@@ -1,0 +1,19 @@
+{
+  "name": "distraction-machine",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "Laura Knight",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "q": "^1.0.1",
+    "request": "^2.36.0",
+    "restify": "^4.0.3"
+  }
+}

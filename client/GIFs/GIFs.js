@@ -2,6 +2,8 @@
 var GIFs = Backbone.Collection.extend ({
   model: CurrentGIF,
 
+  // url: '/gifs',
+
   initialize: function() {
     this.createRandomGIF();
   },
@@ -17,7 +19,9 @@ var GIFs = Backbone.Collection.extend ({
         this.add({
             imageURL: data.data.image_url,
             searchTerm: randomSearchTerm,
-            sourceURL: data.data.url
+            sourceURL: data.data.url,
+            // likes: 0,
+            // dislikes: 0
           });
 
       }.bind(this)
