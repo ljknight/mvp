@@ -11,6 +11,7 @@ var CurrentGIFView = Backbone.View.extend ({
   },
 
   render: function() {
+    this.$el.empty();
     var gif = this.template({
       // shows last image in the collection to make sure it's always showing the most recent
       imageURL: this.collection.models[this.collection.models.length-1].attributes.imageURL,
