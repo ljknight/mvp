@@ -1,4 +1,4 @@
-var Link = require('./gifModel.js');
+var gif = require('./gifModel.js');
 var Q = require('q');
 
 // search db to see if gif exists (search by url)
@@ -8,81 +8,78 @@ var Q = require('q');
 // keep track of visits
 // save in db
 
+
+
 module.exports = {
-  findGIF: function(req, res, next, url) {
-    //
+  // findGIF: function (req, res, next, code) {
+  //   var findLink = Q.nbind(gif.findOne, gif);
+  //   findLink({code: code})
+  //     .then(function (link) {
+  //       if (link) {
+  //         req.navLink = link;
+  //         next();
+  //       } else {
+  //         next(new Error('Link not added yet'));
+  //       }
+  //     })
+  //     .fail(function (error) {
+  //       next(error);
+  //     });
+  // },
+
+  allGIFs: function (req, res, next) {
+    var findAll = Q.nbind(gif.find, gif);
+
+    findAll({})
+    .then(function (gifs) {
+      console.log('found all gifs: ', gifs);
+      res.json(gifs);
+    })
+    .fail(function (error) {
+      console.log('error finding gifs: ', error);
+      next(error);
+    });
   },
 
-  findUrl: function (req, res, next, code) {
-    var findLink = Q.nbind(Link.findOne, Link);
-    findLink({code: code})
-      .then(function (link) {
-        if (link) {
-          req.navLink = link;
-          next();
-        } else {
-          next(new Error('Link not added yet'));
-        }
-      })
-      .fail(function (error) {
-        next(error);
-      });
-  },
+  newGIF: function (req, res, next) {
+    var imageURL = req.body.imageURL;
+    var searchTerm = req.body.searchTerm;
+    var sourceURL = req.body.sourceURL;
+    
+    var createGif = Q.nbind(gif.create, gif);
+    var findGif = Q.nbind(gif.findOne, gif);
 
-  newGIF: function(req, res, next) {
-    console.log('req', req)
-  },
-
-  newLink: function (req, res, next) {
-    console.log('req', req);
-    var url = req.body.url;
-    console.log(req.body);
-    if (!util.isValidUrl(url)) {
-      return next(new Error('Not a valid url'));
-    }
-
-    var createLink = Q.nbind(Link.create, Link);
-    var findLink = Q.nbind(Link.findOne, Link);
-
-    findLink({url: url})
+    findGif({imageURL: imageURL})
       .then(function (match) {
         if (match) {
+          console.log('match', match)
           res.send(match);
         } else {
-          return util.getUrlTitle(url);
+          console.log('not match');
         }
       })
-      .then(function (title) {
-        if (title) {
-          var newLink = {
-            url: url,
-            visits: 0,
-            base_url: req.headers.origin,
-            title: title
+      .then(function () {
+        // console.log('title', title)
+        // if (title) {
+          var newGif = {
+            imageURL: imageURL,
+            searchTerm: '',
+            sourceURL: '',
+            views: 0,
+            likes: 0,
+            dislikes: 0,
           };
-          return createLink(newLink);
-        }
+          return createGif(newGif);
       })
-      .then(function (createdLink) {
-        if (createdLink) {
-          res.json(createdLink);
+      .then(function (createdGif) {
+        if (createdGif) {
+          console.log('created gif! ', createdGif);
+          res.json(createdGif);
         }
       })
       .fail(function (error) {
+        console.log('error creating gif: ', error);
         next(error);
       });
   },
-
-  navToLink: function (req, res, next) {
-    var link = req.navLink;
-    link.visits++;
-    link.save(function (err, savedLink) {
-      if (err) {
-        next(err);
-      } else {
-        res.redirect(savedLink.url);
-      }
-    });
-  }
-
 };

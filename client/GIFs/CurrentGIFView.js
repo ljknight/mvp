@@ -14,7 +14,6 @@ var CurrentGIFView = Backbone.View.extend ({
   increaseViews: function() {
     // increases views for the current gif - not checking entire collection - not adding anything to DB
     this.collection.models[this.collection.models.length-1].attributes.views++;
-    console.log(this.collection.models[this.collection.models.length-1].attributes.views)
   },
 
   render: function() {

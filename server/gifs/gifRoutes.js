@@ -1,11 +1,9 @@
 var gifController = require('./gifController.js');
+// var app = require('../config/middleware.js')
 
 module.exports = function (app) {
   // app === gifRouter injected from middleware.js
-
-  app.route('/api/gifs')
-    // .get(gifController.allLinks)
+  app.route('/')
+    .get(gifController.allGIFs)
     .post(gifController.newGIF);
-
-  // app.get('/:code', gifController.navToLink);
 };

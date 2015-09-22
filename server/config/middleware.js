@@ -9,12 +9,9 @@ module.exports = function (app, express) {
   app.use(bodyParser.json());
   app.use(express.static(__dirname + '/../../client'));
 
-  app.use('/api/gifs', gifRouter); 
+  app.use('/gifs', gifRouter); 
 
   require('../gifs/gifRoutes.js')(gifRouter);
 };
 
 
-var restify = require('restify');  
-var server = restify.createServer();
-server.use(restify.bodyParser());

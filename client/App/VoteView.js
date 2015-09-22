@@ -7,13 +7,11 @@ var VoteView = Backbone.View.extend({
     // only ever affecting the current gif (last in collection) - not checking whole collection, not connected to db
     'click .yay': function() {
       this.collection.models[this.collection.models.length-1].attributes.likes++;
-      console.log(this.collection.models[this.collection.models.length-1].attributes.likes);
       this.render();
       $('.vote-button').prop("disabled", true)
     },
     'click .nay': function() {
       this.collection.models[this.collection.models.length-1].attributes.dislikes++;
-      console.log(this.collection.models[this.collection.models.length-1].attributes.dislikes);
       this.render();
       $('.vote-button').prop("disabled", true)
     }

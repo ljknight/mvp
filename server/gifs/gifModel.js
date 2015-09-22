@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
 
 var GIFSchema = new mongoose.Schema({
-  views: Number,
   imageURL: String,
+  searchTerm: String,
+  sourceURL: String,
+  views: Number,
   likes: Number,
-  dislikes: Number
+  dislikes: Number, 
 });
 
-module.exports = mongoose.model('GIF', GIFSchema);
+var GIF = mongoose.model('GIF', GIFSchema);
+
+module.exports = GIF;
