@@ -3,6 +3,7 @@ var ButtonView = Backbone.View.extend({
 
   events: {
     'click': function() {
+      // 
       this.collection.createRandomGIF();
     }
   },

@@ -1,0 +1,56 @@
+h1 {
+  font-family: Helvetica;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar {
+  float: left;
+  text-align: center;
+  width: 25%;
+}
+
+#container {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+button {
+  border-width: 0;
+  font-size: 16px;
+  padding: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.random-button {
+  background-color: #ff66cc;
+  margin-bottom: 30px; 
+}
+
+.vote {
+  margin: 0 auto 40px;
+}
+
+.vote-button:first-child {
+  margin-right: 20px;
+}
+
+.vote-button {
+  background-color: #66ccff;
+}
+
+#current {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
