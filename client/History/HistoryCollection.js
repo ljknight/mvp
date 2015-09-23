@@ -1,8 +1,8 @@
-var HistoryCollection = Backbone.Collection.extend ({
-  model: HistoryEntry,
+// var HistoryCollection = Backbone.Collection.extend ({
+//   model: HistoryEntry,
 
-  initialize: function () {
+//   initialize: function () {
 
-  }
+//   }
 
-});
+// });

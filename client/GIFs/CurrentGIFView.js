@@ -13,7 +13,13 @@ var CurrentGIFView = Backbone.View.extend ({
 
   increaseViews: function() {
     // increases views for the current gif - not checking entire collection - not adding anything to DB
-    this.collection.models[this.collection.models.length-1].attributes.views++;
+   
+    // not working
+    var model = this.collection.at(this.collection.length-1);
+    var views = model.get('views');
+    model.set('views', views + 1);
+    console.log(model.get('views'))
+    // this.collection.models[this.collection.models.length-1].attributes.views++;
   },
 
   render: function() {
@@ -21,9 +27,7 @@ var CurrentGIFView = Backbone.View.extend ({
     var gif = this.template({
       // shows last image in the collection to make sure it's always showing the most recent
       imageURL: this.collection.models[this.collection.models.length-1].attributes.imageURL,
-      sourceURL: this.collection.models[this.collection.models.length-1].attributes.sourceURL
-      // likes: 0, // get from db
-      // dislikes: 0 // get from db
+      sourceURL: this.collection.models[this.collection.models.length-1].attributes.sourceURL,
     });
     this.$el.append(gif);
     return this;

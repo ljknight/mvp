@@ -10,6 +10,8 @@ var GIFs = Backbone.Collection.extend ({
 
   createRandomGIF: function () { 
     var searchTerms = ['cat', 'kitten', 'dog', 'puppy', 'corgi', 'pug', 'goat', 'cute+animal', 'pusheen', 'zoolander', 'seinfeld', 'bill+murray','tina+fey', 'amy+schumer', 'arrested+development', 'pizza', 'donut'];
+    // var searchTerms = ['cowboy+goat']; // for testing DB
+
     var randomSearchTerm = searchTerms[Math.floor(Math.random() * searchTerms.length)];
 
     $.get(
@@ -20,6 +22,9 @@ var GIFs = Backbone.Collection.extend ({
             imageURL: data.data.image_url,
             searchTerm: randomSearchTerm,
             sourceURL: data.data.url,
+            views: 0,
+            likes: 0,
+            dislikes: 0,
           });
       }.bind(this)
     );

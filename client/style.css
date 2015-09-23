@@ -1,7 +1,29 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
 h1 {
-  font-family: Helvetica;
+  font-size: 40px;
+  font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
+}
+
+.history {
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  width: 25%;
+}
+
+h3 {
+  background-color: #ccff66;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: normal;
+  margin: 0;
+  padding: 10px;
+  width: 110px;
 }
 
 .sidebar {
@@ -11,6 +33,7 @@ h1 {
 }
 
 #container {
+  float: left;
   margin: 0 auto;
   text-align: center;
   width: 50%;
@@ -28,7 +51,9 @@ button:hover {
 
 .random-button {
   background-color: #ff66cc;
+  height: 40px;
   margin-bottom: 30px; 
+  width: 130px;
 }
 
 .vote {
@@ -36,15 +61,18 @@ button:hover {
 }
 
 .vote-button:first-child {
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .vote-button {
   background-color: #66ccff;
+  height: 40px;
+  width: 80px;
 }
 
 #current {
   display: block;
+  float: left;
   margin: 0 auto;
   width: 100%;
 }
@@ -53,4 +81,5 @@ img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
+  min-width: 500px;
 }

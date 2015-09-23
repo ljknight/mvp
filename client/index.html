@@ -2,18 +2,21 @@
 <html>
 <head>
   <title>Distraction Machine</title>
+  <link href='https://fonts.googleapis.com/css?family=Rubik+Mono+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <h1>Distraction Machine</h1>
   <div class="sidebar">
-    <button class="random-button">Randomize</button>
+    <button class="random-button">randomize</button>
     <div class="vote"></div>
-    <ul id="history"></ul>
   </div>
   <div id="container">
     <div id="current"></div>
   </div>
+  <div class="history">
+    <h3>history</h3>
+    <div id="history"></div>
   </div>
 
   <script src="bower_components/underscore/underscore.js"></script>
@@ -26,8 +29,8 @@
   <script src="GIFs/GIFs.js"></script>
   <script src="App/AppModel.js"></script>
 
-  <script src="History/HistoryView.js"></script>
   <script src="History/HistoryEntryView.js"></script>
+  <script src="History/HistoryView.js"></script>
   <script src="GIFs/CurrentGIFView.js"></script>
   <script src="App/VoteView.js"></script>
   <script src="App/ButtonView.js"></script>

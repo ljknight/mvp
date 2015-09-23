@@ -1,19 +1,12 @@
 var gif = require('./gifModel.js');
 var Q = require('q');
 
-// search db to see if gif exists (search by url)
-// if not, add it
-// add like
-// add dislike
-// keep track of visits
-// save in db
-
-
-
 module.exports = {
-  // findGIF: function (req, res, next, code) {
-  //   var findLink = Q.nbind(gif.findOne, gif);
-  //   findLink({code: code})
+  // do I need this method?
+  // findGIF: function (req, res, next, imageURL) {
+  //   var findGif = Q.nbind(gif.findOne, gif);
+
+  //   findGif({imageURL: imageURL})
   //     .then(function (link) {
   //       if (link) {
   //         req.navLink = link;
@@ -45,31 +38,33 @@ module.exports = {
     var imageURL = req.body.imageURL;
     var searchTerm = req.body.searchTerm;
     var sourceURL = req.body.sourceURL;
+    var views = req.body.views;
+    var likes = req.body.likes;
+    var dislikes = req.body.dislikes;
     
     var createGif = Q.nbind(gif.create, gif);
     var findGif = Q.nbind(gif.findOne, gif);
 
     findGif({imageURL: imageURL})
       .then(function (match) {
+        console.log('this is match?', match)
         if (match) {
-          console.log('match', match)
           res.send(match);
+          return;
         } else {
-          console.log('not match');
+          console.log('no match, creating gif')
         }
       })
       .then(function () {
-        // console.log('title', title)
-        // if (title) {
-          var newGif = {
-            imageURL: imageURL,
-            searchTerm: '',
-            sourceURL: '',
-            views: 0,
-            likes: 0,
-            dislikes: 0,
-          };
-          return createGif(newGif);
+        var newGif = {
+          imageURL: imageURL,
+          searchTerm: searchTerm,
+          sourceURL: sourceURL,
+          views: views,
+          likes: likes,
+          dislikes: dislikes,
+        };
+        return createGif(newGif);
       })
       .then(function (createdGif) {
         if (createdGif) {
@@ -81,5 +76,9 @@ module.exports = {
         console.log('error creating gif: ', error);
         next(error);
       });
+  },
+
+  updateGIF: function (req, res, next) {
+    console.log('updating gif', req)
   },
 };

@@ -5,5 +5,6 @@ module.exports = function (app) {
   // app === gifRouter injected from middleware.js
   app.route('/')
     .get(gifController.allGIFs)
-    .post(gifController.newGIF);
+    .post(gifController.newGIF)
+    .put(gifController.updateGIF);
 };
