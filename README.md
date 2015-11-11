@@ -1,2 +1,4 @@
 #mvp
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+Distraction Machine is a web application that gives users a simple way to take a break from whatever they're doing and look at random gifs instead.
+
+Built using Backbone, Node/Express and MongoDB.
